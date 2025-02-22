@@ -1,0 +1,28 @@
+<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:AvaloniaApplication1.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="450"
+             x:Class="AvaloniaApplication1.Views.MainView"
+             x:DataType="vm:MainViewModel"
+			
+			 
+			 >
+  <Design.DataContext>
+    <!-- This only sets the DataContext for the previewer in an IDE,
+         to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+    <vm:MainViewModel />
+  </Design.DataContext>
+	<StackPanel>
+		
+	
+	<Grid ShowGridLines="True" Margin="5" ColumnDefinitions="120,100" RowDefinitions="auto,auto,auto">
+	<Label Grid.Column="0" Grid.Row="0" Content="Name:"/>
+	<TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding Name}" />
+	<Label Grid.Column="0" Grid.Row="1" Content="Age:"/>
+	<TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding Age}" />
+	</Grid>
+		<Button VerticalAlignment="Center" Click="Button_Click">计算</Button>
+	</StackPanel>
+		</UserControl>
